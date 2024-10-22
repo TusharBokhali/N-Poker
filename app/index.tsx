@@ -1,18 +1,25 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity , Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context'
 import React from 'react'
 import { useNavigation, useRootNavigation } from "expo-router";
+import { StatusBar } from 'expo-status-bar';
 
 const index = () => {
     const navigation = useNavigation();
   return (
-    <SafeAreaView style={styles.Main}>
-        <View style={styles.Content}>
-            <View style={styles.heading}>
-                <Text style={styles.Text}>Poker Game</Text>
-                <Text style={styles.Normal}>V. 1.0.0</Text>
+    <View style={styles.Main}>
+        <SafeAreaView >
+            <View style={styles.Content}>
+                <View style={styles.heading}>
+                    <Text style={styles.Text}>Poker Game</Text>
+                    <Text style={styles.Normal}>V. 1.0.0</Text>
+                    <View style={{justifyContent:'center',width:'100%',height:350,alignItems:'center'}}>  
+                        <Image source={require('../assets/images/Game.png')} style={{width:200,height:200}}/>
+                    </View>
+                </View>
             </View>
-            <View style={styles.Start}>
+        </SafeAreaView>
+        <View style={styles.Start}>
                     <TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate('Start')}}>
                         <Text style={styles.Buttons}>Start</Text>
                     </TouchableOpacity>
@@ -21,8 +28,7 @@ const index = () => {
                         <Text style={styles.Buttons}>Privacy</Text>
                     </TouchableOpacity>
             </View>
-        </View>
-    </SafeAreaView>
+    </View>
   )
 }
 
@@ -31,17 +37,17 @@ export default index
 const styles = StyleSheet.create({
     Main:{
         flex:1,
+        width:'100%',
+        backgroundColor:'#5555f3',
+        justifyContent:'space-between'
     },
     Content:{
         width:'100%',
-        height:'100%',
         padding:15,
-        backgroundColor:"#3d3838",
-        justifyContent:'flex-start'
     },
     heading:{
         width:'100%',
-        height:'50%',
+        height:'60%',
         marginTop:20,
     },
     Text:{
@@ -57,9 +63,12 @@ const styles = StyleSheet.create({
     },
     Start:{
         width:'100%',
-        height:'auto',
+        height:'40%',
+        backgroundColor:'white',
         alignItems:'center',
-        justifyContent:'center',
+        justifyContent:'flex-start',
+        borderTopLeftRadius:50,
+        borderTopRightRadius:50,
     },
     button: {
         alignItems: 'center',
@@ -69,6 +78,7 @@ const styles = StyleSheet.create({
         width:'80%',
         margin:'auto',
         marginTop:20,
+        margin:'0',
     },
     Buttons:{
         fontSize:22,
