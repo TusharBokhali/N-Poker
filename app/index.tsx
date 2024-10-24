@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View, TouchableOpacity , Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity , Image, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context'
 import React from 'react'
 import { useNavigation, useRootNavigation } from "expo-router";
 import { StatusBar } from 'expo-status-bar';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const index = () => {
+   
     const navigation = useNavigation();
   return (
     <View style={styles.Main}>
@@ -24,8 +26,8 @@ const index = () => {
                         <Text style={styles.Buttons}>Start</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.button}>
-                        <Text style={styles.Buttons}>Privacy</Text>
+                    <TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate('Level')}}>
+                        <Text style={styles.Buttons}>Level</Text>
                     </TouchableOpacity>
             </View>
     </View>

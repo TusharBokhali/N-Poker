@@ -31,6 +31,8 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="index" options={{ title: 'index' , headerShown:false}}  />
         <Stack.Screen name="Start" options={{ title: 'Start' , headerShown:false}}  />
+        <Stack.Screen name="Level" options={{ title: 'Level' , headerShown:false}}  />
+        <Stack.Screen name="Hard" options={{ title: 'Hard' , headerShown:false}}  />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>
